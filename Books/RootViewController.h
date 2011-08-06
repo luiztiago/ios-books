@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController {
+    NSArray *booksList;
+    NSArray *booksList2;
+    NSMutableArray *listOfItems;
+}
+
+@property (nonatomic, retain) NSArray *booksList;
+@property (nonatomic, retain) NSArray *booksList2;
 
 @end

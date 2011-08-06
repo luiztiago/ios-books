@@ -16,6 +16,7 @@
 		3AF5A8F913EDB5DA00D5CAEF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF5A8F713EDB5DA00D5CAEF /* MainWindow.xib */; };
 		3AF5A8FC13EDB5DA00D5CAEF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5A8FB13EDB5DA00D5CAEF /* RootViewController.m */; };
 		3AF5A8FF13EDB5DA00D5CAEF /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF5A8FD13EDB5DA00D5CAEF /* RootViewController.xib */; };
+		3AF5A90A13EDB86D00D5CAEF /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5A90913EDB86D00D5CAEF /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,18 @@
 		3AF5A8E513EDB5D900D5CAEF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3AF5A8E713EDB5D900D5CAEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3AF5A8E913EDB5D900D5CAEF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3AF5A8ED13EDB5D900D5CAEF /* Books-Info.plist */ = {isa = PBXFileReference; path = "Books-Info.plist"; sourceTree = "<group>"; };
+		3AF5A8ED13EDB5D900D5CAEF /* Books-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Books-Info.plist"; sourceTree = "<group>"; };
 		3AF5A8EF13EDB5DA00D5CAEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AF5A8F113EDB5DA00D5CAEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3AF5A8F313EDB5DA00D5CAEF /* Books-Prefix.pch */ = {isa = PBXFileReference; path = "Books-Prefix.pch"; sourceTree = "<group>"; };
-		3AF5A8F413EDB5DA00D5CAEF /* BooksAppDelegate.h */ = {isa = PBXFileReference; path = BooksAppDelegate.h; sourceTree = "<group>"; };
+		3AF5A8F313EDB5DA00D5CAEF /* Books-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Books-Prefix.pch"; sourceTree = "<group>"; };
+		3AF5A8F413EDB5DA00D5CAEF /* BooksAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BooksAppDelegate.h; sourceTree = "<group>"; };
 		3AF5A8F513EDB5DA00D5CAEF /* BooksAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooksAppDelegate.m; sourceTree = "<group>"; };
 		3AF5A8F813EDB5DA00D5CAEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		3AF5A8FA13EDB5DA00D5CAEF /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		3AF5A8FA13EDB5DA00D5CAEF /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3AF5A8FB13EDB5DA00D5CAEF /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		3AF5A8FE13EDB5DA00D5CAEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		3AF5A90813EDB86D00D5CAEF /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		3AF5A90913EDB86D00D5CAEF /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				3AF5A8FB13EDB5DA00D5CAEF /* RootViewController.m */,
 				3AF5A8FD13EDB5DA00D5CAEF /* RootViewController.xib */,
 				3AF5A8EC13EDB5D900D5CAEF /* Supporting Files */,
+				3AF5A90813EDB86D00D5CAEF /* Book.h */,
+				3AF5A90913EDB86D00D5CAEF /* Book.m */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				3AF5A8F213EDB5DA00D5CAEF /* main.m in Sources */,
 				3AF5A8F613EDB5DA00D5CAEF /* BooksAppDelegate.m in Sources */,
 				3AF5A8FC13EDB5DA00D5CAEF /* RootViewController.m in Sources */,
+				3AF5A90A13EDB86D00D5CAEF /* Book.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

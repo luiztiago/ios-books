@@ -7,13 +7,43 @@
 //
 
 #import "RootViewController.h"
+#import "Book.h"
 
 @implementation RootViewController
-
+@synthesize booksList;
+@synthesize booksList2;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    listOfItems = [[NSMutableArray alloc] init];
+    
+    Book *book1 = [[Book alloc] init];
+    book1.name = @"Objective-C";
+    book1.genre = @"Technology";
+    book1.isbn = @"12312132312";
+    
+    Book *book2 = [[Book alloc] init];
+    book2.name = @"TECDAM";
+    book2.genre = @"Technology";
+    book2.isbn = @"76123671789";
+    
+    Book *book3 = [[Book alloc] init];
+    book3.name = @"Xcode";
+    book3.genre = @"Technology";
+    book3.isbn = @"8923480408";
+    
+    booksList = [[NSArray alloc] initWithObjects:book1, book2, book3, nil];
+    NSDictionary *favoriteBooks = [NSDictionary dictionaryWithObject:booksList forKey:@"Books"];
+
+    booksList2 = [[NSArray alloc] initWithObjects:book3, book1, book2, nil];
+    NSDictionary *indicatedBooks = [NSDictionary dictionaryWithObject:booksList2 forKey:@"Books"];
+    
+    [listOfItems addObject:favoriteBooks];
+    [listOfItems addObject:indicatedBooks];
+    
+    self.navigationItem.title = @"Books";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -47,12 +77,22 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [listOfItems count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    NSDictionary *dictionary = [listOfItems objectAtIndex:section];
+    NSArray *array = [dictionary objectForKey:@"Books"];
+    return [array count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+        return @"Lista de livros favoritos";
+    else
+        return @"Lista de livros indicados";
 }
 
 // Customize the appearance of table view cells.
@@ -66,7 +106,21 @@
     }
 
     // Configure the cell.
+    /*Book *book = [[Book alloc] init];
+    
+    book = [booksList objectAtIndex:indexPath.row];
+    cell.textLabel.text = book.name;*/
+    
+    NSDictionary *dictionary = [listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Books"];
+    Book *book = [[Book alloc] init];
+    book = [array objectAtIndex:indexPath.row];
+    
+    NSString *cellValue = book.name;
+    cell.textLabel.text = cellValue;
+    
     return cell;
+
 }
 
 /*
@@ -119,6 +173,20 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 	*/
+    
+    NSDictionary *dictionary = [listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Books"];
+    Book *book = [[Book alloc] init];
+    book = [array objectAtIndex:indexPath.row];
+    
+    NSString *cellValue = book.name;
+    
+    NSString *str = [NSString stringWithFormat: @"%@", cellValue];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Detalhes do Livro" message:str delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    [alert release];
+    
 }
 
 - (void)didReceiveMemoryWarning
