@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "DetailViewController.h"
 #import "Book.h"
 
 @implementation RootViewController
@@ -166,26 +167,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
     
     NSDictionary *dictionary = [listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Books"];
     Book *book = [[Book alloc] init];
     book = [array objectAtIndex:indexPath.row];
     
-    NSString *cellValue = book.name;
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    detailViewController.name = book.name;
+    detailViewController.isbn = book.isbn;
+    detailViewController.genre = book.genre;
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+	
     
-    NSString *str = [NSString stringWithFormat: @"%@", cellValue];
+    /*NSString *str = [NSString stringWithFormat: @"%@", cellValue];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Detalhes do Livro" message:str delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
     [alert show];
-    [alert release];
+    [alert release];*/
     
 }
 
